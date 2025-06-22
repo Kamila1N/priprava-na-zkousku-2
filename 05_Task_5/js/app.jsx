@@ -14,11 +14,23 @@ function Animal({name,type, age}){
     )
 }
 
+function People({name, yearOfBirth, adress}){
+
+    return(
+        <div>
+            <h4>Ahoj, jmenuji se {name}</h4>
+            <p>narodil jsem se v malém městě v roce {yearOfBirth}<br/> nyní je mi {new Date().getFullYear() - yearOfBirth}</p>
+            <p>se svojí rodinou žíji {adress}</p>
+        </div>
+    )
+}
+
 function App(){
 
     return(
         <>
             <Animal name="Joska" type="tygr" age={7}/>
+            <People name="Kamila" yearOfBirth={1996} adress="Moravské Knínice"/>
         {/*    props*/}
         </>
 

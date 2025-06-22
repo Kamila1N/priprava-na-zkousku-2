@@ -56,3 +56,40 @@ kocka.meow();
 kocka.die();
 kocka.die();
 kocka.die();
+
+
+
+class People {
+    constructor(name, age, job) {
+        this.name = name;
+        this.age = age;
+        this.job = job;
+    }
+
+    sayHallo() {
+        console.log(`Ahoj jsem ${this.name}, je mi ${this.age} let a pracuji jako ${this.job}`);
+    }
+}
+
+const clovek = new People('Petr', 30, 'programátor');
+console.log(clovek);
+clovek.sayHallo();
+
+
+class Girl extends People {
+    constructor(name, age, job, hairColor, haveChildren, hobby) {
+        super(name, age, job);
+        this.hairColor = hairColor;
+        this.haveChildren = haveChildren;
+        this.hobby = hobby;
+    }
+    sayHallo() {
+        console.log(`Ahoj jsem ${this.name}, je mi ${this.age} let, pracuji jako ${this.job}, mám ${this.hairColor} vlasy, také mám ${this.haveChildren} děti, moje koníčky jsou: ${this.hobby}`);
+    }
+
+}
+
+const novaHolka = new Girl('Kateřina', 27, 'učitelka', 'hnědé', 2, ['čtení', 'cestování', 'malování']);
+
+console.log(novaHolka);
+novaHolka.sayHallo();

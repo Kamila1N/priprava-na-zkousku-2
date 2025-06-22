@@ -10,6 +10,6 @@ export default defineConfig({
   // root: './03_Task_3',
   // root: './04_Task_4',
   // root: './05_Task_5',
-  root: './06_Task_6',
+  // root: './06_Task_6',
 
 })

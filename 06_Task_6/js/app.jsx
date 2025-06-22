@@ -2,6 +2,7 @@ import React from "react";
 import { createRoot } from "react-dom/client";
 
 import animalData from './data/animals'
+import productData from './data/products' //export defaultních dat
 
 function Animal({name, type, age}) {
     return (
@@ -12,7 +13,6 @@ function Animal({name, type, age}) {
         </li>
     )
 }
-
 function AnimalList({animals}) {
     return (
         <div>
@@ -33,10 +33,43 @@ function AnimalList({animals}) {
 }
 
 
+//pro produkty
+
+function Product({name, price}) {
+    return (
+        <li>
+            <h3>{name}</h3>
+            <p>Cena: {price} Kč</p>
+        </li>
+    )
+}
+
+function ProductList({products}) {
+    return(
+        <div>
+            <h2>Seznam produktů</h2>
+            <ul>
+                {
+                    products.map(product => {
+                        return <Product
+                            key={product.id}
+                            name={product.name}
+                            price={product.price}
+                        />
+                    })
+                }
+            </ul>
+        </div>
+    )
+}
+
+
+
 function App() {
     return (
         <>
             <AnimalList animals={animalData} />
+            <ProductList products={productData} />
         </>
     )
 }
